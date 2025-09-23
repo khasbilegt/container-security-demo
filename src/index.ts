@@ -1,10 +1,9 @@
 import { serve } from "@hono/node-server";
 import { Hono } from "hono";
 
-const app = new Hono();
-
-app.get("/", (c) => {
-	const html = `
+export const app = new Hono()
+	.get("/", (c) => {
+		const html = `
 	<!DOCTYPE html>
 	<html lang="en">
 	<head>
@@ -59,8 +58,11 @@ app.get("/", (c) => {
 	</html>
   `;
 
-	return c.html(html);
-});
+		return c.html(html);
+	})
+	.all("/health", (c) => {
+		return c.json({ status: "ok" });
+	});
 
 serve({ fetch: app.fetch, port: 3000 }, (info) => {
 	console.log(`Server is running on http://localhost:${info.port}`);
