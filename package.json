@@ -3,10 +3,10 @@
 	"type": "module",
 	"packageManager": "pnpm@10.16.1",
 	"scripts": {
-		"dev": "tsx watch src/index.tsx",
-		"build": "esbuild src/index.tsx --platform=node --format=esm --bundle --minify --sourcemap --outdir=dist",
+		"dev": "tsx watch src/server.ts",
+		"build": "esbuild src/server.ts --platform=node --format=esm --bundle --minify --sourcemap --outdir=dist",
 		"check": "biome check",
-		"start": "node dist/index.js",
+		"start": "node dist/server.js",
 		"prepare": "husky",
 		"test": "vitest",
 		"cf-dev": "wrangler dev",
