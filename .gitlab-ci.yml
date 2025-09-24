@@ -1,11 +1,3 @@
-# Security templates kept and aligned to stages above
-include:
-- template: Security/SAST.gitlab-ci.yml
-- template: Security/Secret-Detection.gitlab-ci.yml
-
-variables:
-  SECRET_DETECTION_ENABLED: 'true'
-
 .pnpm:
   image: node:lts-alpine
   variables:
