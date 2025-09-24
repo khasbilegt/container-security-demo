@@ -3,7 +3,7 @@ import { Hono } from "hono";
 
 import { Layout } from "./components/layout.js";
 
-export const app = new Hono()
+export const app = new Hono<{ Bindings: CloudflareBindings }>()
 	.get("/", (c) =>
 		c.html(
 			<Layout>
