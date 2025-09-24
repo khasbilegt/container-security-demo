@@ -13,7 +13,7 @@ env:
   REGISTRY: docker.io
   # Image repository, without hostname and tag
   IMAGE_NAME: khasbilegt/mnsec-demo
-  COMPARE_TAG: beta
+  COMPARE_TAG: main
   SHA: ${{ github.event.pull_request.head.sha || github.event.after }}
 
 jobs:
