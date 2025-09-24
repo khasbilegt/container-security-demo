@@ -3,7 +3,7 @@ import { Hono } from "hono";
 
 import { Layout } from "./components/layout.js";
 
-export const app = new Hono<{ Bindings: CloudflareBindings }>()
+const app = new Hono<{ Bindings: CloudflareBindings }>()
 	.get("/", (c) =>
 		c.html(
 			<Layout>
@@ -20,3 +20,5 @@ export const app = new Hono<{ Bindings: CloudflareBindings }>()
 serve({ fetch: app.fetch, port: 3000 }, (info) => {
 	console.log(`Server is running on http://localhost:${info.port}`);
 });
+
+export default app;
